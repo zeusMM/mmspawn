@@ -13,3 +13,5 @@ Copy mmspawn folder into your mission root directory.
 Open your initServer.sqf or create one and paste
   []execVM "mmspawn\spawner_init.sqf"
 Go ingame and start looting!
+
+IMPORTANT: Go to the mmspawn\spawner_loottables.sqf and adjust your items as well as respawn rate!
