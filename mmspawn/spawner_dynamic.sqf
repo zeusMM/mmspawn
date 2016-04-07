@@ -37,7 +37,11 @@ while {mmSttsSpawnDynamic} do
 		_spawn = [];
 		
 		_nearBuildings = nearestObjects [_pos, ["House", "Building"], mmSttsSpawnRadius];
-		_nearBuildings = _nearBuildings - mmArrBuildingsTimeout;
+		
+		{
+			_nearBuildings = _nearBuildings - [_x select 0];
+		} forEach mmArrBuildingsTimeout;
+		
 		{
 			if( str (_x buildingPos 0) != "[0,0,0]") then {_buildings pushBack _x};
 		} forEach _nearBuildings;
