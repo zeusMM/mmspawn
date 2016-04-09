@@ -23,6 +23,7 @@ _physx = createVehicle ["Land_Battery_F",[_pos0,_pos1,_pos2+0.1], [], 0, "can_Co
 sleep 0.5;
 _holder = createVehicle ["groundweaponholder",[_pos0,_pos1,(getposATL _physx select 2)], [], 0, "can_Collide"];
 deletevehicle _physx;
+mmArrItems pushback _holder;
 
 //_holder = createvehicle [ "groundweaponholder", _loc,[], 0, "can_Collide"];
 //_cutter = createvehicle [ "ClutterCutter_small_2_Ep1", _loc,[], 0, "can_Collide"];
@@ -58,6 +59,22 @@ switch (_type) do
 		for "_i" from 1 to _count do
 		{
 		_holder additemcargoglobal [_item, 1];
+		};	
+	};
+	
+	case "pack":
+	{
+		for "_i" from 1 to _count do
+		{
+		_holder addbackpackcargoglobal [_item, 1];
+		};	
+	};
+	
+	case "ammo":
+	{
+		for "_i" from 1 to _count do
+		{
+		_holder addmagazinecargoglobal [_item, 1];
 		};	
 	};
 };

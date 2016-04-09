@@ -15,6 +15,7 @@ diag_log format ["MM. SPAWN init!"];
 diag_log format ["-------------------------------------------------------------------------------"];
 
 mmArrBuildingsTimeout = [];
+mmArrItems = [];
 
 _init = []execVM "mmspawn\spawner_loottable.sqf";
 waitUntil {scriptDone _init};   // Wait until the loot table has initialized before doing anything else!

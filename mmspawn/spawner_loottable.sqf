@@ -2,10 +2,11 @@ if(!isServer) exitWith {};
 
 diag_log format ["MM LOOTTABLES: Initialization started at %1", time];
 
+// These are general settings that you need to go over to set up the script the way you want it!
 mmSttsSpawnDynamic = true; // No alternative atm so leave on true!
-mmSttsSpawnRadius = 300; // What radius around players should be populated with loot?
+mmSttsSpawnRadius = 150; // What radius around players should be populated with loot?
 mmSttsSpawnChance = 50; // General chance for a buildingposition to get loot - use to adjust overall loot density!
-mmSttsSpawnRespawn = 60; // After how many seconds should a building spawn new loot?
+mmSttsSpawnRespawn = 900; // After how many seconds should a building spawn new loot?
 mmSttsSpawnCycle = 30; // How often should the script run? Needs performance testing!
 
 /*
@@ -78,22 +79,24 @@ The first number determines the category of building:
 1-military
 2-industrial
 3-research/lab
+Credits to NA_PALM for the idea - obviously this is vastly superior now.
 
 Each following array starts with the drop chance for this category, followed by the loot list that it should spawn items from if the chance gets taken.
 E.G: The [10, [loot0mil]] in the third entry of the second row tells you that a military type building has a 10% chance of spawning a item from loot0mil - which is high grade weaponry.
 */
 
 lootList = [
-[0, [20, [loot0civ]], [8, [loot0med]], [0, [ loot0mil]], [25, [loot1civ]], [10, [loot1med]], [0, [loot1mil]], [22, [loot2civ]], [8, [loot2med]], [0, [loot2mil]], [30, [loot3civ]], [15, [loot3med]], [0, [loot3mil]]],
-[1, [8, [loot0civ]], [12, [loot0med]], [10, [ loot0mil]], [8, [loot1civ]], [10, [loot1med]], [5, [loot1mil]], [10, [loot2civ]], [15, [loot2med]], [8, [loot2mil]], [0, [loot3civ]], [12, [loot3med]], [18, [loot3mil]]],
-[2, [30, [loot0civ]], [10, [loot0med]], [0, [ loot0mil]], [30, [loot1civ]], [10, [loot1med]], [0, [loot1mil]], [30, [loot2civ]], [10, [loot2med]], [0, [loot2mil]], [30, [loot3civ]], [10, [loot3med]], [0, [loot3mil]]],
-[3, [30, [loot0civ]], [10, [loot0med]], [0, [ loot0mil]], [30, [loot1civ]], [10, [loot1med]], [0, [loot1mil]], [30, [loot2civ]], [10, [loot2med]], [0, [loot2mil]], [30, [loot3civ]], [10, [loot3med]], [0, [loot3mil]]]
+[0, [6, [loot0civ]], [4, [loot0med]], [0, [ loot0mil]], [12, [loot1civ]], [8, [loot1med]], [0, [loot1mil]], [18, [loot2civ]], [12, [loot2med]], [1, [loot2mil]], [20, [loot3civ]], [10, [loot3med]], [0, [loot3mil]]],
+[1, [8, [loot0civ]], [8, [loot0med]], [6, [ loot0mil]], [8, [loot1civ]], [12, [loot1med]], [6, [loot1mil]], [10, [loot2civ]], [15, [loot2med]], [12, [loot2mil]], [0, [loot3civ]], [12, [loot3med]], [18, [loot3mil]]],
+[2, [2, [loot0civ]], [2, [loot0med]], [2, [ loot0mil]], [10, [loot1civ]], [8, [loot1med]], [0, [loot1mil]], [15, [loot2civ]], [20, [loot2med]], [5, [loot2mil]], [16, [loot3civ]], [8, [loot3med]], [0, [loot3mil]]],
+[3, [0, [loot0civ]], [0, [loot0med]], [0, [ loot0mil]], [15, [loot1civ]], [30, [loot1med]], [25, [loot1mil]], [15, [loot2civ]], [15, [loot2med]], [25, [loot2mil]], [0, [loot3civ]], [0, [loot3med]], [0, [loot3mil]]]
 ];
 
 
 /*
 This list contains all buildings that loot should spawn in and designates their loot category.
 You can add and other building to this - just make sure it has building positions!
+CREDITS TO NA_PALM 
 */
 itemsBuildingsList = [
 ["Land_Airport_left_F", 0],
