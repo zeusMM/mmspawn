@@ -5,7 +5,7 @@ diag_log format ["MM LOOTTABLES: Initialization started at %1", time];
 // These are general settings that you need to go over to set up the script the way you want it!
 mmSttsSpawnDynamic = true; // No alternative atm so leave on true!
 mmSttsSpawnRadius = 150; // What radius around players should be populated with loot?
-mmSttsSpawnChance = 50; // General chance for a buildingposition to get loot - use to adjust overall loot density!
+mmSttsSpawnChance = 50; // General chance for a building to get loot - use to adjust overall loot density!
 mmSttsSpawnRespawn = 900; // After how many seconds should a building spawn new loot?
 mmSttsSpawnCycle = 30; // How often should the script run? Needs performance testing!
 

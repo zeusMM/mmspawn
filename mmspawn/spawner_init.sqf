@@ -17,8 +17,7 @@ diag_log format ["--------------------------------------------------------------
 mmArrBuildingsTimeout = [];
 mmArrItems = [];
 
-_init = []execVM "mmspawn\spawner_loottable.sqf";
-waitUntil {scriptDone _init};   // Wait until the loot table has initialized before doing anything else!
+_mmScriptLoot = []execVM "mmspawn\spawner_loottable.sqf";
+waitUntil {scriptDone _mmScriptLoot};   // Wait until the loot table has initialized before doing anything else!
 
-
-[]execVM "mmspawn\spawner_dynamic.sqf";
+_mmScriptSpawner = []execVM "mmspawn\spawner_dynamic.sqf";
